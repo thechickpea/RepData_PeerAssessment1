@@ -118,9 +118,9 @@ Create new factor, weekday and weekends:
 mergedata$date <- as.Date(mergedata$date)
 mergedata$wd <- ifelse(weekdays(mergedata$date) %in% c("Saturday", "Sunday"), "weekend", "weekday")
 week.noweek <- mergedata %>% group_by(wd, interval) %>% summarise(promedio = mean(newsteps))
-z <- ggplot(week.noweek, aes(x=interval, y=promedio)) + geom_line(colour="blue")
-z <- z + facet_grid(wd~.)
-z
+k <- ggplot(week.noweek, aes(x=interval, y=promedio)) + geom_line(colour="red")
+k <- k + facet_grid(wd~.)
+k
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
